@@ -2,3 +2,6 @@ sup {
     font-size: 40%;
     top: -1em;
 }
+.breadcrumbs ul {
+    flex-wrap: nowrap;
+}
