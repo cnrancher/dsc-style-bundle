@@ -1,10 +1,12 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
 <ul>
     <li>
-  <a class="home-link-dsc" href="{{projData 'url2' this page.attributes.project-data}}" title="SUSE Documentation Home" aria-label="SUSE Documentation Home"></a>
+  {{! same version root as the product link: keeps /latest/ or /v0.7.0/ from the address bar and avoids the site root, which has no index page }}
+  <a class="home-link-dsc" href="{{versionRootPath page}}" title="SUSE Documentation Home" aria-label="SUSE Documentation Home"></a>
     </li>
     <li>
-      <a href="{{projData 'full-proj-url' this page.attributes.project-data}}" title="{{projData 'title' this page.attributes.project-data}}" aria-label="SUSE Documentation - {{projData 'title' this page.attributes.project-data}}">
+      {{! component version root, relative so the entry point is preserved: /latest/ stays /latest/ }}
+      <a href="{{versionRootPath page}}" title="{{projData 'title' this page.attributes.project-data}}" aria-label="SUSE Documentation - {{projData 'title' this page.attributes.project-data}}">
         {{{projData 'title' this page.attributes.project-data}}}
       </a>
     </li>
